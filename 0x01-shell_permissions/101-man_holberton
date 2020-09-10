@@ -1,8 +1,9 @@
+.\" Manpage for eniac.
+.\" Contact hadirjenni@gmail.com to correct errors or typos.
 .TH man "2" "10December 1954" "0.32" "eniac man page"
 .SH NAME
 .B eniac
 -the first electronic general-purpose digital computer.
-
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
@@ -13,6 +14,5 @@ does not take any options.
 .SH SEE ALSO
 .SH BUGS
 No known bugs.
-
 .SH AUTHOR
 University of Pennsylvania.
