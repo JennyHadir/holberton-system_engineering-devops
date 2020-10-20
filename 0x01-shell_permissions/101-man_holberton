@@ -1,11 +1,11 @@
-.TH man "2" "10December 1954" "0.32" "eniac man page"
+.TH man 2 "10 December 1954" "0.32" "eniac man page"
 .SH NAME
 .B eniac
--the first electronic general-purpose digital computer.
+- the first electronic general-purpose digital computer.
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
-Eniac was Turing-complete, and able to solve "a large of numerical problems" through reprogramming.
+Eniac was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
 .SH OPTIONS
 .B eniac
 does not take any options.
