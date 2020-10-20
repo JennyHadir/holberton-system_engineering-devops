@@ -1,5 +1,3 @@
-.\" Manpage for eniac.
-.\" Contact hadirjenni@gmail.com to correct errors or typos.
 .TH man "2" "10December 1954" "0.32" "eniac man page"
 .SH NAME
 .B eniac
@@ -12,6 +10,7 @@ Eniac was Turing-complete, and able to solve "a large of numerical problems" thr
 .B eniac
 does not take any options.
 .SH SEE ALSO
+ENIAC could be programmed to perform complex sequences of operations(2), including loops(2), branches(2), and subroutines(2).
 .SH BUGS
 No known bugs.
 .SH AUTHOR
