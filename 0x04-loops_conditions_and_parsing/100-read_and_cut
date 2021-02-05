@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# This script is displaying the content of /etc/passwd file
+
+filename="/etc/passwd"
+n=1
+while read -r line
+do
+	echo "$line"
+	let n+=1
+done < $filename
