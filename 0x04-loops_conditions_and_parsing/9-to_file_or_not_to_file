@@ -2,16 +2,16 @@
 # This script is displaying details about holbertonschool file
 
 filename=" holbertonschool " 
-if [ -e " $filename " ]
+if [ -e $filename ]
 then
 	echo " holbertonschool file exists "
-	if [ -s " $filename " ]
+	if [ -s $filename ]
 	then
 		echo " holbertonschool file is not empty "
 	else
 		echo " holbertonschool file is empty "
 	fi
-	if [ -f " $filename " ]
+	if [ -f $filename ]
 	then
 		echo " holbertonschool file is a regular file "
 	fi
