@@ -1,5 +1,4 @@
 #Create a manifet that kills a process named killmenow
-exec { 'killmenow':
+exec { 'pkill killmenow':
     path    => '/usr/bin',
-    command => 'pkill',
 }
