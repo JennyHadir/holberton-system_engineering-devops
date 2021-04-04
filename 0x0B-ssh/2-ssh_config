@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# SSH config file
+Host 35.231.33.91
+IdentityFile ~/.ssh/holberton
+PasswordAuthentication no
