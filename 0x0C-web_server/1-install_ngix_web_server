@@ -1,1 +1,19 @@
-domain.tech
+#!/usr/bin/env bash
+# setup and run nginx server
+
+apt-get update -y
+if ! apt-get install -y nginx;
+then
+	echo "Failed to install nginx" 1>&2
+	exit 1
+fi
+
+echo "Holberton School" > /var/www/html/index.html
+
+if ! service nginx start;
+then
+	echo "Failed to start nginx" 1>&2
+	exit 1
+fi
+
+exit 0

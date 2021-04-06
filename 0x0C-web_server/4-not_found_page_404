@@ -1,10 +1,40 @@
 #!/usr/bin/env bash
-# Script to install ngix and add redirect page
-sudo apt-get update
-sudo apt-get -y install nginx
-echo "Holberton School" | sudo tee /var/www/html/index.html
-echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
-sed -i '/listen 80 default_server/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-sed -i '/listen 80 default_server/a error_page 404 /custom_404.html; location = /custom_404.html {root /usr/share/nginx/html;\n internal;}' /etc/nginx/sites-available/default
-sudo nginx -t
-sudo service nginx restart
+# run nginx server
+
+apt-get update -y
+
+if ! apt-get install -y nginx;
+then
+	echo "Failed to install nginx" 1>&2
+	exit 1
+be
+
+echo -e \
+"server {
+ 	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html;
+	server_name _;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	location /redirect_me {
+		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	}
+	error_page 404 /custom_404.html;
+	location = /custom_404.html {
+		internal;
+	}
+}" > /etc/nginx/sites-available/default
+echo "Holberton School" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+
+if ! service nginx restart;
+then
+	echo "Failed to start nginx" 1>&2
+	exit 1
+be
+
+exit 0
+
