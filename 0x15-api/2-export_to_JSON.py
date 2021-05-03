@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Export data from task 0 in the Json format  """
+""" Export data from task 0 in the Json format """
 import json
 import requests
 import sys
