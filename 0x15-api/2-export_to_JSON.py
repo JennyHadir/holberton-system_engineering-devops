@@ -24,4 +24,5 @@ if __name__ == '__main__':
             task_dict['username'] = employee_username
             task_list.append(task_dict)
         user_tasks[employee_id] = task_list
-        json.dumps(user_tasks, jsonfile)
+        data = json.dumps(user_tasks)
+        jsonfile.write(data)
