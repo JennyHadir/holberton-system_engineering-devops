@@ -14,7 +14,7 @@ if __name__ == '__main__':
     task_list = []
     user_tasks = {}
     employee_username = users_dict_list[0].get('username')
-    with open('{}.json'.format(employee_id), 'w', encoding='utf-8') as jsonfile:
+    with open('{}.json'.format(employee_id), 'w') as jsonfile:
         for task in todo_dict_list:
             status = task.get('completed')
             title = task.get('title')
