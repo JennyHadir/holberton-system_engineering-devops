@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Return the number of subscribers from reddit api """
 import requests
-from requests import exceptions
 
 
 def number_of_subscribers(subreddit):
