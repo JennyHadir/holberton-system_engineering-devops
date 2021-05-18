@@ -17,11 +17,11 @@ def recurse(subreddit, hot_list=[], after=''):
             title = post.get('data').get('title')
             hot_list.append(title)
         after = data.get('after')
+        if after is None:
+            return hot_list
+        else:
+            return recurse(subreddit, hot_list, after)
     else:
         if hot_list is None:
             return None
         return hot_list
-    if after is None:
-        return hot_list
-    else:
-        return recurse(subreddit, hot_list, after)
