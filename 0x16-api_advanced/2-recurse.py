@@ -14,13 +14,13 @@ def recurse(subreddit, hot_list=[], after=''):
     data = r.get('data')
     after = data.get('after')
     posts = data.get('children')
-    try:
+    if posts is not None:
         for post in posts:
             title = post.get('data').get('title')
             hot_list.append(title)
         if after is None:
             return hot_list
         else:
-            recurse(subreddit, hot_list, after)
-    except Exception:
-        return None
+            return recurse(subreddit, hot_list, after)
+    else:
+        return hot_list
