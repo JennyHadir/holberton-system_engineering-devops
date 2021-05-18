@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Return the number of subscribers from reddit api """
 import requests
+from requests import exceptions
 
 
 def number_of_subscribers(subreddit):
@@ -10,9 +11,7 @@ def number_of_subscribers(subreddit):
                      format(subreddit),
                      headers=User,
                      allow_redirects=False).json()
-
-    data = r.get('data')
-    subscribers = data.get('subscribers')
-    if data is not None and subscribers is not None:
-        return subscribers
-    return 0
+    try:
+        return r.get('data').get('subscribers')
+    except Exception:
+        return 0
